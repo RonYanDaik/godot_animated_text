@@ -1,6 +1,6 @@
 ## Godot Animated Text
 
-[[animated_text.gif]]
+![show](animated_text.gif)
 
 ### For Godot Version 4.x
 
