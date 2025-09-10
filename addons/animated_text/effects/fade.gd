@@ -1,9 +1,9 @@
-tool
+@tool
 extends Node
 
 
-export(bool) var enabled : bool = true
-export(Gradient) var gradient : Gradient
+@export var enabled : bool = true
+@export var gradient : Gradient
 
 
 func _ready() -> void:
@@ -14,6 +14,6 @@ func apply(time : float, _index : int, letter : Node2D, _at : IB_Animated_Text) 
 	if not enabled:
 		return
 	if gradient != null:
-		letter.modulate = gradient.interpolate(time)
+		letter.modulate = gradient.sample(time)
 	else:
 		letter.modulate.a = time

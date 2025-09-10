@@ -1,667 +1,680 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=3 uid="uid://csnlk02c8uga1"]
 
-[ext_resource path="res://addons/animated_text/animated_text.gd" type="Script" id=1]
-[ext_resource path="res://addons/animated_text/effects/path_follow.gd" type="Script" id=3]
-[ext_resource path="res://addons/animated_text/effects/scale.gd" type="Script" id=4]
-[ext_resource path="res://addons/animated_text/effects/fade.gd" type="Script" id=5]
-[ext_resource path="res://addons/animated_text/animated_text_letter.tscn" type="PackedScene" id=6]
-[ext_resource path="res://addons/animated_text/examples/icon.png" type="Texture" id=7]
-[ext_resource path="res://addons/animated_text/generator.gd" type="Script" id=8]
-[ext_resource path="res://addons/animated_text/examples/animated_text_test.gd" type="Script" id=10]
-[ext_resource path="res://addons/animated_text/examples/font1.tres" type="DynamicFont" id=11]
+[ext_resource type="Script" uid="uid://c13trecfa2fyb" path="res://addons/Animated_Text/animated_text.gd" id="1"]
+[ext_resource type="Script" uid="uid://b8padxc8tk0y2" path="res://addons/Animated_Text/effects/path_follow.gd" id="3"]
+[ext_resource type="Script" uid="uid://odfvwk6nx50i" path="res://addons/Animated_Text/effects/scale.gd" id="4"]
+[ext_resource type="Script" uid="uid://bodcvcb55017m" path="res://addons/Animated_Text/effects/fade.gd" id="5"]
+[ext_resource type="PackedScene" path="res://addons/animated_text/animated_text_letter.tscn" id="6"]
+[ext_resource type="Script" uid="uid://sw84egmeocas" path="res://addons/Animated_Text/animated_text_letter.gd" id="6_7dj32"]
+[ext_resource type="Texture2D" uid="uid://cyqe7fmyb1n1q" path="res://addons/Animated_Text/examples/icon.png" id="7"]
+[ext_resource type="Script" uid="uid://chmentpqyn4ev" path="res://addons/Animated_Text/generator.gd" id="8"]
+[ext_resource type="Script" uid="uid://bnb35ndw3kp3p" path="res://addons/Animated_Text/examples/animated_text_test.gd" id="10"]
+[ext_resource type="FontFile" path="res://addons/animated_text/examples/font1.tres" id="11"]
 
-[sub_resource type="Curve2D" id=5]
+[sub_resource type="Curve2D" id="5"]
 _data = {
-"points": PoolVector2Array( 209.729, 99.1435, -209.729, -99.1435, 808, 729, 0, 0, 0, 0, 207, 657 )
+"points": PackedVector2Array(209.729, 99.1435, -209.729, -99.1435, 808, 729, 0, 0, 0, 0, 207, 657)
 }
+point_count = 2
 
-[sub_resource type="Curve" id=3]
-max_value = 5.0
-_data = [ Vector2( 0, 0 ), 0.0, -0.464928, 0, 0, Vector2( 0.278547, 3.01802 ), 0.0, 0.0, 0, 0, Vector2( 0.873702, 0.720721 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+[sub_resource type="Curve" id="3"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, -0.464928, 0, 0, Vector2(0.278547, 3.01802), 0.0, 0.0, 0, 0, Vector2(0.873702, 0.720721), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
 
-[sub_resource type="Curve" id=10]
-max_value = 5.0
-_data = [ Vector2( 0, 5 ), 0.0, -0.464928, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+[sub_resource type="Curve" id="10"]
+_limits = [0.0, 5.0, 0.0, 1.0]
+_data = [Vector2(0, 5), 0.0, -0.464928, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
-[sub_resource type="Gradient" id=9]
+[sub_resource type="Gradient" id="9"]
 interpolation_mode = 2
-offsets = PoolRealArray( 0, 0.330189, 0.515094, 0.756604, 1 )
-colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0, 0.242188, 0, 0, 0.287324, 0.671875, 0.519653, 0, 0.63662, 0.0983887, 0.96875, 0, 1 )
+offsets = PackedFloat32Array(0, 0.330189, 0.515094, 0.756604, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0, 0.242188, 0, 0, 0.287324, 0.671875, 0.519653, 0, 0.63662, 0.0983887, 0.96875, 0, 1)
 
-[sub_resource type="Curve2D" id=6]
+[sub_resource type="Curve2D" id="6"]
 _data = {
-"points": PoolVector2Array( 1.90004, 121.771, -1.90004, -121.771, 209, 657, 0, 0, 0, 0, 208, 471, 0, 0, 0, 0, 207, 657 )
+"points": PackedVector2Array(1.90004, 121.771, -1.90004, -121.771, 209, 657, 0, 0, 0, 0, 208, 471, 0, 0, 0, 0, 207, 657)
 }
+point_count = 3
 
-[sub_resource type="Curve2D" id=2]
+[sub_resource type="Curve2D" id="2"]
 _data = {
-"points": PoolVector2Array( -140.403, 287.149, 140.403, -287.149, 186, 1121, 48.5825, 128.964, -48.5825, -128.964, 40, 712, -99.7122, -1.21779, 99.7122, 1.21779, 117, 507, 0, 0, 0, 0, 207, 657 )
+"points": PackedVector2Array(-140.403, 287.149, 140.403, -287.149, 186, 1121, 48.5825, 128.964, -48.5825, -128.964, 40, 712, -99.7122, -1.21779, 99.7122, 1.21779, 117, 507, 0, 0, 0, 0, 207, 657)
 }
+point_count = 4
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 10 )
+script = ExtResource("10")
 
 [node name="WellDone" type="Node2D" parent="."]
-position = Vector2( 55, 246 )
-script = ExtResource( 1 )
+position = Vector2(55, 246)
+script = ExtResource("1")
 shift = 0.214
 loop = false
-initial_state = [ {
+initial_state = [{
 "modulate.a": 1.0,
-"position": Vector2( 39.5, 2 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(39.5, 2),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 106, 2 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(106, 2),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 150.5, 2 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(150.5, 2),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 193.5, 2 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(193.5, 2),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 224.5, 2 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(224.5, 2),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 262, 2 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(262, 2),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 320.5, 2 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(320.5, 2),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 385, 2 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(385, 2),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 442, 2 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(442, 2),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 478.5, 2 ),
-"scale": Vector2( 1, 1 )
-} ]
-effects = [ NodePath("Effects") ]
+"position": Vector2(478.5, 2),
+"scale": Vector2(1, 1)
+}]
+effects = Array[NodePath]([NodePath("Effects")])
 character_container = NodePath("Characters")
 
 [node name="Generator" type="Node2D" parent="WellDone"]
-script = ExtResource( 8 )
+script = ExtResource("8")
 text = "WELL DONE!"
 character_container = NodePath("../Characters")
-font = ExtResource( 11 )
+font = ExtResource("11")
 
 [node name="Characters" type="Node2D" parent="WellDone"]
 
-[node name="Letter" parent="WellDone/Characters" instance=ExtResource( 6 )]
-position = Vector2( 37.5, 3 )
+[node name="Letter" parent="WellDone/Characters" instance=ExtResource("6")]
+position = Vector2(9, 0)
+script = ExtResource("6_7dj32")
 letter = "W"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter2" parent="WellDone/Characters" instance=ExtResource( 6 )]
-position = Vector2( 104, 3 )
+[node name="@Node2D@72923" parent="WellDone/Characters" instance=ExtResource("6")]
+position = Vector2(23, 0)
+script = ExtResource("6_7dj32")
 letter = "E"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter6" parent="WellDone/Characters" instance=ExtResource( 6 )]
-position = Vector2( 148.5, 3 )
+[node name="@Node2D@72924" parent="WellDone/Characters" instance=ExtResource("6")]
+position = Vector2(32.5, 0)
+script = ExtResource("6_7dj32")
 letter = "L"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter7" parent="WellDone/Characters" instance=ExtResource( 6 )]
-position = Vector2( 191.5, 3 )
+[node name="@Node2D@72925" parent="WellDone/Characters" instance=ExtResource("6")]
+position = Vector2(41.5, 0)
+script = ExtResource("6_7dj32")
 letter = "L"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter10" parent="WellDone/Characters" instance=ExtResource( 6 )]
-position = Vector2( 222.5, 3 )
+[node name="@Node2D@72926" parent="WellDone/Characters" instance=ExtResource("6")]
+position = Vector2(48, 0)
+script = ExtResource("6_7dj32")
 letter = " "
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter11" parent="WellDone/Characters" instance=ExtResource( 6 )]
-position = Vector2( 260, 3 )
+[node name="@Node2D@72927" parent="WellDone/Characters" instance=ExtResource("6")]
+position = Vector2(56, 0)
+script = ExtResource("6_7dj32")
 letter = "D"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter14" parent="WellDone/Characters" instance=ExtResource( 6 )]
-position = Vector2( 318.5, 3 )
+[node name="@Node2D@72928" parent="WellDone/Characters" instance=ExtResource("6")]
+position = Vector2(68.5, 0)
+script = ExtResource("6_7dj32")
 letter = "O"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter15" parent="WellDone/Characters" instance=ExtResource( 6 )]
-position = Vector2( 384.154, 2.92731 )
-scale = Vector2( 0.999813, 0.999813 )
+[node name="@Node2D@72929" parent="WellDone/Characters" instance=ExtResource("6")]
+position = Vector2(82, 0)
+script = ExtResource("6_7dj32")
 letter = "N"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter18" parent="WellDone/Characters" instance=ExtResource( 6 )]
-position = Vector2( 462.736, 1.76642 )
-scale = Vector2( 0.94108, 0.94108 )
+[node name="@Node2D@72930" parent="WellDone/Characters" instance=ExtResource("6")]
+position = Vector2(94, 0)
+script = ExtResource("6_7dj32")
 letter = "E"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter19" parent="WellDone/Characters" instance=ExtResource( 6 )]
-position = Vector2( 547.28, 0.159485 )
-scale = Vector2( 0.725743, 0.725743 )
+[node name="@Node2D@72931" parent="WellDone/Characters" instance=ExtResource("6")]
+position = Vector2(102, 0)
+script = ExtResource("6_7dj32")
 letter = "!"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
 [node name="Effects" type="Node2D" parent="WellDone"]
 
 [node name="PathFollow" type="Node2D" parent="WellDone/Effects"]
-script = ExtResource( 3 )
+script = ExtResource("3")
 path_node = NodePath("Path2D")
 
 [node name="Path2D" type="Path2D" parent="WellDone/Effects/PathFollow"]
-position = Vector2( -209, -656 )
-curve = SubResource( 5 )
+position = Vector2(-209, -656)
+curve = SubResource("5")
 
 [node name="Scale" type="Node" parent="WellDone/Effects"]
-script = ExtResource( 4 )
-scale_curve = SubResource( 3 )
+script = ExtResource("4")
+scale_curve = SubResource("3")
 
 [node name="Fade" type="Node" parent="WellDone/Effects"]
-script = ExtResource( 5 )
+script = ExtResource("5")
 enabled = false
 
 [node name="GreatGame" type="Node2D" parent="."]
-position = Vector2( 55, 679 )
-script = ExtResource( 1 )
+position = Vector2(55, 679)
+script = ExtResource("1")
 shift = 0.218
 loop = false
-initial_state = [ {
+initial_state = [{
 "modulate.a": 1.0,
-"position": Vector2( 30, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(30, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 89, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(89, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 141, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(141, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 194, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(194, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 250, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(250, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 285.5, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(285.5, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 325, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(325, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 385, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(385, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 453, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(453, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 514, 0 ),
-"scale": Vector2( 1, 1 )
-} ]
-effects = [ NodePath("Effects") ]
+"position": Vector2(514, 0),
+"scale": Vector2(1, 1)
+}]
+effects = Array[NodePath]([NodePath("Effects")])
 character_container = NodePath("Characters")
 
 [node name="Generator" type="Node2D" parent="GreatGame"]
-script = ExtResource( 8 )
+script = ExtResource("8")
 text = "GREAT GAME"
 character_container = NodePath("../Characters")
-font = ExtResource( 11 )
+font = ExtResource("11")
 
 [node name="Characters" type="Node2D" parent="GreatGame"]
 
-[node name="Letter3" parent="GreatGame/Characters" instance=ExtResource( 6 )]
-modulate = Color( 0.0983887, 0.96875, 0, 1 )
-position = Vector2( 30, 0 )
+[node name="Letter3" parent="GreatGame/Characters" instance=ExtResource("6")]
+modulate = Color(0.0983887, 0.96875, 0, 1)
+position = Vector2(30, 0)
 letter = "G"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter4" parent="GreatGame/Characters" instance=ExtResource( 6 )]
-modulate = Color( 0.0983887, 0.96875, 0, 1 )
-position = Vector2( 89, 0 )
+[node name="Letter4" parent="GreatGame/Characters" instance=ExtResource("6")]
+modulate = Color(0.0983887, 0.96875, 0, 1)
+position = Vector2(89, 0)
 letter = "R"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter5" parent="GreatGame/Characters" instance=ExtResource( 6 )]
-modulate = Color( 0.0983887, 0.96875, 0, 1 )
-position = Vector2( 141, 0 )
+[node name="Letter5" parent="GreatGame/Characters" instance=ExtResource("6")]
+modulate = Color(0.0983887, 0.96875, 0, 1)
+position = Vector2(141, 0)
 letter = "E"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter8" parent="GreatGame/Characters" instance=ExtResource( 6 )]
-modulate = Color( 0.0983887, 0.96875, 0, 1 )
-position = Vector2( 194, 0 )
+[node name="Letter8" parent="GreatGame/Characters" instance=ExtResource("6")]
+modulate = Color(0.0983887, 0.96875, 0, 1)
+position = Vector2(194, 0)
 letter = "A"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter9" parent="GreatGame/Characters" instance=ExtResource( 6 )]
-modulate = Color( 0.0983887, 0.96875, 0, 1 )
-position = Vector2( 250, 0 )
+[node name="Letter9" parent="GreatGame/Characters" instance=ExtResource("6")]
+modulate = Color(0.0983887, 0.96875, 0, 1)
+position = Vector2(250, 0)
 letter = "T"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter12" parent="GreatGame/Characters" instance=ExtResource( 6 )]
-modulate = Color( 0.0983887, 0.96875, 0, 1 )
-position = Vector2( 285.5, 0 )
+[node name="Letter12" parent="GreatGame/Characters" instance=ExtResource("6")]
+modulate = Color(0.0983887, 0.96875, 0, 1)
+position = Vector2(285.5, 0)
 letter = " "
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter13" parent="GreatGame/Characters" instance=ExtResource( 6 )]
-modulate = Color( 0.0983887, 0.96875, 0, 1 )
-position = Vector2( 325, 0 )
+[node name="Letter13" parent="GreatGame/Characters" instance=ExtResource("6")]
+modulate = Color(0.0983887, 0.96875, 0, 1)
+position = Vector2(325, 0)
 letter = "G"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter16" parent="GreatGame/Characters" instance=ExtResource( 6 )]
-modulate = Color( 0.0983887, 0.96875, 0, 1 )
-position = Vector2( 385, 0 )
+[node name="Letter16" parent="GreatGame/Characters" instance=ExtResource("6")]
+modulate = Color(0.0983887, 0.96875, 0, 1)
+position = Vector2(385, 0)
 letter = "A"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter17" parent="GreatGame/Characters" instance=ExtResource( 6 )]
-modulate = Color( 0.0983887, 0.96875, 0, 1 )
-position = Vector2( 453, 0 )
+[node name="Letter17" parent="GreatGame/Characters" instance=ExtResource("6")]
+modulate = Color(0.0983887, 0.96875, 0, 1)
+position = Vector2(453, 0)
 letter = "M"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter20" parent="GreatGame/Characters" instance=ExtResource( 6 )]
-modulate = Color( 0.0983887, 0.96875, 0, 1 )
-position = Vector2( 514, 0 )
+[node name="Letter20" parent="GreatGame/Characters" instance=ExtResource("6")]
+modulate = Color(0.0983887, 0.96875, 0, 1)
+position = Vector2(514, 0)
 letter = "E"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
 [node name="Effects" type="Node2D" parent="GreatGame"]
 
 [node name="Scale" type="Node" parent="GreatGame/Effects"]
-script = ExtResource( 4 )
-scale_curve = SubResource( 10 )
+script = ExtResource("4")
+scale_curve = SubResource("10")
 
 [node name="Fade" type="Node" parent="GreatGame/Effects"]
-script = ExtResource( 5 )
-gradient = SubResource( 9 )
+script = ExtResource("5")
+gradient = SubResource("9")
 
 [node name="Almost" type="Node2D" parent="."]
-position = Vector2( 60, 1138 )
-script = ExtResource( 1 )
+position = Vector2(60, 1138)
+script = ExtResource("1")
 shift = 0.51
 loop = false
-initial_state = [ {
+initial_state = [{
 "modulate.a": 1.0,
-"position": Vector2( 30, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(30, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 81.5, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(81.5, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 146, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(146, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 219.5, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(219.5, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 275.5, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(275.5, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 327, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(327, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 363.5, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(363.5, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 383.5, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(383.5, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 419, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(419, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 474, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(474, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 532, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(532, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 570.5, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(570.5, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 610, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(610, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 670, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(670, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 730, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(730, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 774, 0 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(774, 0),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 819.5, 0 ),
-"scale": Vector2( 1, 1 )
-} ]
-effects = [ NodePath("Effects") ]
+"position": Vector2(819.5, 0),
+"scale": Vector2(1, 1)
+}]
+effects = Array[NodePath]([NodePath("Effects")])
 character_container = NodePath("Characters")
 
 [node name="Generator" type="Node2D" parent="Almost"]
-script = ExtResource( 8 )
+script = ExtResource("8")
 text = "Almost, Try Again"
 character_container = NodePath("../Characters")
-font = ExtResource( 11 )
+font = ExtResource("11")
 
 [node name="Characters" type="Node2D" parent="Almost"]
 
-[node name="Letter" parent="Almost/Characters" instance=ExtResource( 6 )]
-position = Vector2( 30, 0 )
+[node name="Letter" parent="Almost/Characters" instance=ExtResource("6")]
+position = Vector2(30, 0)
 letter = "A"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter2" parent="Almost/Characters" instance=ExtResource( 6 )]
-position = Vector2( 81.5, 0 )
+[node name="Letter2" parent="Almost/Characters" instance=ExtResource("6")]
+position = Vector2(81.5, 0)
 letter = "l"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter6" parent="Almost/Characters" instance=ExtResource( 6 )]
-position = Vector2( 146, 0 )
+[node name="Letter6" parent="Almost/Characters" instance=ExtResource("6")]
+position = Vector2(146, 0)
 letter = "m"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter7" parent="Almost/Characters" instance=ExtResource( 6 )]
-position = Vector2( 219.5, 0 )
+[node name="Letter7" parent="Almost/Characters" instance=ExtResource("6")]
+position = Vector2(219.5, 0)
 letter = "o"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter10" parent="Almost/Characters" instance=ExtResource( 6 )]
-position = Vector2( 275.5, 0 )
+[node name="Letter10" parent="Almost/Characters" instance=ExtResource("6")]
+position = Vector2(275.5, 0)
 letter = "s"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter11" parent="Almost/Characters" instance=ExtResource( 6 )]
-position = Vector2( 327, 0 )
+[node name="Letter11" parent="Almost/Characters" instance=ExtResource("6")]
+position = Vector2(327, 0)
 letter = "t"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter14" parent="Almost/Characters" instance=ExtResource( 6 )]
-position = Vector2( 363.5, 0 )
+[node name="Letter14" parent="Almost/Characters" instance=ExtResource("6")]
+position = Vector2(363.5, 0)
 letter = ","
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter15" parent="Almost/Characters" instance=ExtResource( 6 )]
-position = Vector2( 383.5, 0 )
+[node name="Letter15" parent="Almost/Characters" instance=ExtResource("6")]
+position = Vector2(383.5, 0)
 letter = " "
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter18" parent="Almost/Characters" instance=ExtResource( 6 )]
-position = Vector2( 419, 0 )
+[node name="Letter18" parent="Almost/Characters" instance=ExtResource("6")]
+position = Vector2(419, 0)
 letter = "T"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter19" parent="Almost/Characters" instance=ExtResource( 6 )]
-position = Vector2( 474, 0 )
+[node name="Letter19" parent="Almost/Characters" instance=ExtResource("6")]
+position = Vector2(474, 0)
 letter = "r"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter22" parent="Almost/Characters" instance=ExtResource( 6 )]
-position = Vector2( 532, 0 )
+[node name="Letter22" parent="Almost/Characters" instance=ExtResource("6")]
+position = Vector2(532, 0)
 letter = "y"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter23" parent="Almost/Characters" instance=ExtResource( 6 )]
-position = Vector2( 570.5, 0 )
+[node name="Letter23" parent="Almost/Characters" instance=ExtResource("6")]
+position = Vector2(570.5, 0)
 letter = " "
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter26" parent="Almost/Characters" instance=ExtResource( 6 )]
-position = Vector2( 610, 0 )
+[node name="Letter26" parent="Almost/Characters" instance=ExtResource("6")]
+position = Vector2(610, 0)
 letter = "A"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter27" parent="Almost/Characters" instance=ExtResource( 6 )]
-position = Vector2( 670, 0 )
+[node name="Letter27" parent="Almost/Characters" instance=ExtResource("6")]
+position = Vector2(670, 0)
 letter = "g"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter30" parent="Almost/Characters" instance=ExtResource( 6 )]
-position = Vector2( 730, 0 )
+[node name="Letter30" parent="Almost/Characters" instance=ExtResource("6")]
+position = Vector2(730, 0)
 letter = "a"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter31" parent="Almost/Characters" instance=ExtResource( 6 )]
-position = Vector2( 774, 0 )
+[node name="Letter31" parent="Almost/Characters" instance=ExtResource("6")]
+position = Vector2(774, 0)
 letter = "i"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Letter34" parent="Almost/Characters" instance=ExtResource( 6 )]
-position = Vector2( 819.5, 0 )
+[node name="Letter34" parent="Almost/Characters" instance=ExtResource("6")]
+position = Vector2(819.5, 0)
 letter = "n"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
 [node name="Effects" type="Node2D" parent="Almost"]
 
 [node name="PathFollow" type="Node2D" parent="Almost/Effects"]
-script = ExtResource( 3 )
+script = ExtResource("3")
 path_node = NodePath("Path2D")
 
 [node name="Path2D" type="Path2D" parent="Almost/Effects/PathFollow"]
-position = Vector2( -209, -656 )
-curve = SubResource( 6 )
+position = Vector2(-209, -656)
+curve = SubResource("6")
 
 [node name="Scale" type="Node" parent="Almost/Effects"]
-script = ExtResource( 4 )
+script = ExtResource("4")
 enabled = false
-scale_curve = SubResource( 3 )
+scale_curve = SubResource("3")
 
 [node name="Fade" type="Node" parent="Almost/Effects"]
-script = ExtResource( 5 )
+script = ExtResource("5")
 
 [node name="Congratulations" type="Node2D" parent="."]
-position = Vector2( 84, 1543 )
-script = ExtResource( 1 )
+position = Vector2(84, 1543)
+script = ExtResource("1")
 shift = 0.1
 loop = false
-initial_state = [ {
+initial_state = [{
 "modulate.a": 1.0,
-"position": Vector2( -12, 6 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(-12, 6),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 40, 6 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(40, 6),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 103, 6 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(103, 6),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 170, 6 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(170, 6),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 236, 6 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(236, 6),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 298, 6 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(298, 6),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 355, 6 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(355, 6),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 412, 6 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(412, 6),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 469, 6 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(469, 6),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 520, 6 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(520, 6),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 576, 6 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(576, 6),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 621, 6 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(621, 6),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 664, 6 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(664, 6),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 727, 6 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(727, 6),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 791, 6 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(791, 6),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 872, -17 ),
-"scale": Vector2( 1, 1 )
+"position": Vector2(872, -17),
+"scale": Vector2(1, 1)
 }, {
 "modulate.a": 1.0,
-"position": Vector2( 879, -114 ),
-"scale": Vector2( 1, 1 )
-} ]
-effects = [ NodePath("Effects") ]
+"position": Vector2(879, -114),
+"scale": Vector2(1, 1)
+}]
+effects = Array[NodePath]([NodePath("Effects")])
 character_container = NodePath("Characters")
 
 [node name="Characters" type="Node2D" parent="Congratulations"]
-modulate = Color( 0, 0.439216, 1, 1 )
+modulate = Color(0, 0.439216, 1, 1)
 
-[node name="C" parent="Congratulations/Characters" instance=ExtResource( 6 )]
-position = Vector2( -14, 7 )
+[node name="C" parent="Congratulations/Characters" instance=ExtResource("6")]
+position = Vector2(-14, 7)
 letter = "C"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="O" parent="Congratulations/Characters" instance=ExtResource( 6 )]
-position = Vector2( 38, 7 )
+[node name="O" parent="Congratulations/Characters" instance=ExtResource("6")]
+position = Vector2(38, 7)
 letter = "O"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="N" parent="Congratulations/Characters" instance=ExtResource( 6 )]
-position = Vector2( 101, 7 )
+[node name="N" parent="Congratulations/Characters" instance=ExtResource("6")]
+position = Vector2(101, 7)
 letter = "N"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="G" parent="Congratulations/Characters" instance=ExtResource( 6 )]
-position = Vector2( 168, 7 )
+[node name="G" parent="Congratulations/Characters" instance=ExtResource("6")]
+position = Vector2(168, 7)
 letter = "G"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="R" parent="Congratulations/Characters" instance=ExtResource( 6 )]
-position = Vector2( 234, 7 )
+[node name="R" parent="Congratulations/Characters" instance=ExtResource("6")]
+position = Vector2(234, 7)
 letter = "R"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="A" parent="Congratulations/Characters" instance=ExtResource( 6 )]
-position = Vector2( 296, 7 )
+[node name="A" parent="Congratulations/Characters" instance=ExtResource("6")]
+position = Vector2(296, 7)
 letter = "A"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="T" parent="Congratulations/Characters" instance=ExtResource( 6 )]
-position = Vector2( 353, 7 )
+[node name="T" parent="Congratulations/Characters" instance=ExtResource("6")]
+position = Vector2(353, 7)
 letter = "T"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="U" parent="Congratulations/Characters" instance=ExtResource( 6 )]
-position = Vector2( 410, 7 )
+[node name="U" parent="Congratulations/Characters" instance=ExtResource("6")]
+position = Vector2(410, 7)
 letter = "U"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="L" parent="Congratulations/Characters" instance=ExtResource( 6 )]
-position = Vector2( 467, 7 )
+[node name="L" parent="Congratulations/Characters" instance=ExtResource("6")]
+position = Vector2(467, 7)
 letter = "L"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="A2" parent="Congratulations/Characters" instance=ExtResource( 6 )]
-position = Vector2( 518, 7 )
+[node name="A2" parent="Congratulations/Characters" instance=ExtResource("6")]
+position = Vector2(518, 7)
 letter = "A"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="T2" parent="Congratulations/Characters" instance=ExtResource( 6 )]
-position = Vector2( 574, 7 )
+[node name="T2" parent="Congratulations/Characters" instance=ExtResource("6")]
+position = Vector2(574, 7)
 letter = "T"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="I" parent="Congratulations/Characters" instance=ExtResource( 6 )]
-position = Vector2( 619, 7 )
+[node name="I" parent="Congratulations/Characters" instance=ExtResource("6")]
+position = Vector2(619, 7)
 letter = "I"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="O2" parent="Congratulations/Characters" instance=ExtResource( 6 )]
-position = Vector2( 662, 7 )
+[node name="O2" parent="Congratulations/Characters" instance=ExtResource("6")]
+position = Vector2(662, 7)
 letter = "O"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="N2" parent="Congratulations/Characters" instance=ExtResource( 6 )]
-position = Vector2( 725, 7 )
+[node name="N2" parent="Congratulations/Characters" instance=ExtResource("6")]
+position = Vector2(725, 7)
 letter = "N"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="S" parent="Congratulations/Characters" instance=ExtResource( 6 )]
-position = Vector2( 789, 7 )
+[node name="S" parent="Congratulations/Characters" instance=ExtResource("6")]
+position = Vector2(789, 7)
 letter = "S"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="!" parent="Congratulations/Characters" instance=ExtResource( 6 )]
-position = Vector2( 870, -16 )
+[node name="!" parent="Congratulations/Characters" instance=ExtResource("6")]
+position = Vector2(870, -16)
 letter = "!"
-font = ExtResource( 11 )
+font = ExtResource("11")
 
-[node name="Sprite" type="Sprite" parent="Congratulations/Characters"]
-position = Vector2( 877, -113 )
-texture = ExtResource( 7 )
+[node name="Sprite" type="Sprite2D" parent="Congratulations/Characters"]
+position = Vector2(877, -113)
+texture = ExtResource("7")
 
 [node name="Effects" type="Node2D" parent="Congratulations"]
 
 [node name="PathFollow" type="Node2D" parent="Congratulations/Effects"]
-script = ExtResource( 3 )
+script = ExtResource("3")
 path_node = NodePath("Path2D")
 
 [node name="Path2D" type="Path2D" parent="Congratulations/Effects/PathFollow"]
-position = Vector2( -209, -656 )
-curve = SubResource( 2 )
+position = Vector2(-209, -656)
+curve = SubResource("2")
 
 [node name="Scale" type="Node" parent="Congratulations/Effects"]
-script = ExtResource( 4 )
-scale_curve = SubResource( 3 )
+script = ExtResource("4")
+scale_curve = SubResource("3")
 
 [node name="Fade" type="Node" parent="Congratulations/Effects"]
-script = ExtResource( 5 )
+script = ExtResource("5")
 enabled = false

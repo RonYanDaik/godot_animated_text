@@ -1,15 +1,15 @@
-tool
+@tool
 extends Node2D
 
 
-export(bool) var regen : bool setget _set_regen
-export(String) var text : String setget _set_text
-export(NodePath) var character_container : NodePath
-export(Font) var font : Font setget _set_font
+@export var regen : bool : set = _set_regen
+@export var text : String : set = _set_text
+@export var character_container : NodePath
+@export var font : Font : set = _set_font
 
 
 var _character_container : Node2D
-var _letter_prefab := preload("res://addons/animated_text/animated_text_letter.tscn")
+var _letter_prefab : PackedScene = preload("animated_text_letter.tscn")
 
 
 func _ready() -> void:
@@ -34,7 +34,7 @@ func _set_font(value : Font) -> void:
 
 func _regen_characters() -> void:
 	var cont := _character_container
-	if Engine.editor_hint:
+	if Engine.is_editor_hint():
 		cont = get_node(character_container)
 	if cont and _letter_prefab:
 		for c in cont.get_children():
@@ -42,9 +42,9 @@ func _regen_characters() -> void:
 		var x : float = 0.0
 		for index in text.length():
 			var l := text[index]
-			var letter : Node2D = _letter_prefab.instance()
+			var letter : Node2D = _letter_prefab.instantiate()
 			cont.add_child(letter)
-			if Engine.editor_hint:
+			if Engine.is_editor_hint():
 				letter.owner = get_tree().edited_scene_root
 			letter.letter = l
 			letter.position = Vector2(x + letter.size.x / 2.0, 0.0)

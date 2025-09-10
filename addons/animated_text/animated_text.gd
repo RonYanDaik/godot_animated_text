@@ -1,4 +1,4 @@
-tool
+@tool
 class_name IB_Animated_Text
 extends Node2D
 
@@ -6,16 +6,16 @@ extends Node2D
 signal completed
 
 
-export(bool) var snapshot := false setget _set_snapshot
-export(bool) var reset := false setget _set_reset
-export(float) var duration : float = 2.0
-export(float, 0.0, 1.0) var shift := 0.0
-export(bool) var playing : bool = false setget _set_playing
-export(bool) var loop : bool = true
-export(Array) var initial_state := []
-export(Array, NodePath) var effects : Array = [] setget _set_effects
-export(int) var current_effect : int setget _set_current_effect
-export(NodePath) var character_container : NodePath
+@export var snapshot := false : set = _set_snapshot
+@export var reset := false : set = _set_reset
+@export var duration : float = 2.0
+@export var shift := 0.0
+@export var playing : bool = false : set = _set_playing
+@export var loop : bool = true
+@export var initial_state := []
+@export var effects : Array[NodePath] = [] : set = _set_effects
+@export var current_effect : int = 0 : set = _set_current_effect
+@export var character_container : NodePath
 
 
 var _time : float = 0.0
@@ -56,7 +56,7 @@ func _update_text_at_time(time : float) -> void:
 #	print(character_duration, ", ", character_delay)
 	for index in _character_container.get_child_count():
 		var letter : Node2D = _character_container.get_child(index) as Node2D
-		var t2 := min(max(time - (character_delay * index), 0.0), character_duration) / character_duration
+		var t2 := minf(max(time - (character_delay * index), 0.0), character_duration) / character_duration
 		var t : float = IB_Easing.Sine.easeOut(t2, 0.0, 1.0, 1.0)
 #		print(index, ", ", time, ", ", t2, ", ", t)
 		if _current_effect:
@@ -95,7 +95,8 @@ func _set_playing(value : bool) -> void:
 	var previous := playing
 	playing = value
 	_time = 0.0
-	property_list_changed_notify()
+	#property_list_changed_notify()
+	notify_property_list_changed()
 	if playing and not previous and _current_effect:
 		for fx in _current_effect.get_children():
 			if (fx as Node).has_method("reset"):

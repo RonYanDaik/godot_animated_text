@@ -1,9 +1,9 @@
-tool
+@tool
 extends Node
 
 
-export(bool) var enabled : bool = true
-export(bool) var once : bool = true
+@export var enabled : bool = true
+@export var once : bool = true
 
 
 var _done : bool = false

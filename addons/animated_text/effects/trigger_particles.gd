@@ -1,8 +1,8 @@
-tool
-extends "res://addons/animated_text/effects/function.gd"
+@tool
+extends "function.gd"
 
 
-export(NodePath) var particles : NodePath
+@export var particles : NodePath
 
 
 
