@@ -4,7 +4,7 @@
 
 ### For Godot Version 4.x
 
-Addon qucily edited to run on godot 4.x.
+Addon quckly edited to run on godot 4.x.
 Not claiming that it works correctly. Feel free to conribute fixing mistakes.
 
 ### For Godot Version 3.x
