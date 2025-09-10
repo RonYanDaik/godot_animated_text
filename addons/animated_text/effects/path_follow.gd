@@ -25,4 +25,5 @@ func apply(time : float, index : int, letter : Node2D, at : IB_Animated_Text) ->
 		var distance : float = available_length * time
 		letter.position = at.initial_state[index]["position"]
 		var position : Vector2 = letter.get_parent().to_local(_path.to_global(_path.curve.sample_baked(distance)))
-		letter.position += position
+		position = (_path.curve.sample_baked(distance))
+		letter.global_position = letter.start_global_position + position

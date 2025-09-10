@@ -1,19 +1,21 @@
-[gd_scene load_steps=17 format=3 uid="uid://csnlk02c8uga1"]
+[gd_scene load_steps=19 format=3 uid="uid://csnlk02c8uga1"]
 
 [ext_resource type="Script" uid="uid://c13trecfa2fyb" path="res://addons/Animated_Text/animated_text.gd" id="1"]
 [ext_resource type="Script" uid="uid://b8padxc8tk0y2" path="res://addons/Animated_Text/effects/path_follow.gd" id="3"]
 [ext_resource type="Script" uid="uid://odfvwk6nx50i" path="res://addons/Animated_Text/effects/scale.gd" id="4"]
 [ext_resource type="Script" uid="uid://bodcvcb55017m" path="res://addons/Animated_Text/effects/fade.gd" id="5"]
-[ext_resource type="PackedScene" path="res://addons/animated_text/animated_text_letter.tscn" id="6"]
-[ext_resource type="Script" uid="uid://sw84egmeocas" path="res://addons/Animated_Text/animated_text_letter.gd" id="6_7dj32"]
+[ext_resource type="PackedScene" uid="uid://bel4rehwyu4ip" path="res://addons/Animated_Text/animated_text_letter.tscn" id="5_cra5j"]
+[ext_resource type="PackedScene" uid="uid://bel4rehwyu4ip" path="res://addons/animated_text/animated_text_letter.tscn" id="6"]
+[ext_resource type="Script" uid="uid://sw84egmeocas" path="res://addons/animated_text/animated_text_letter.gd" id="6_f3d1l"]
 [ext_resource type="Texture2D" uid="uid://cyqe7fmyb1n1q" path="res://addons/Animated_Text/examples/icon.png" id="7"]
 [ext_resource type="Script" uid="uid://chmentpqyn4ev" path="res://addons/Animated_Text/generator.gd" id="8"]
 [ext_resource type="Script" uid="uid://bnb35ndw3kp3p" path="res://addons/Animated_Text/examples/animated_text_test.gd" id="10"]
 [ext_resource type="FontFile" path="res://addons/animated_text/examples/font1.tres" id="11"]
+[ext_resource type="Script" uid="uid://cf52r50qsmeef" path="res://addons/Animated_Text/animated_text_sprite.gd" id="12_f3d1l"]
 
 [sub_resource type="Curve2D" id="5"]
 _data = {
-"points": PackedVector2Array(209.729, 99.1435, -209.729, -99.1435, 808, 729, 0, 0, 0, 0, 207, 657)
+"points": PackedVector2Array(209.729, 99.1435, -209.729, -99.1435, 560, 21, 0, 0, 0, 0, -3, 17)
 }
 point_count = 2
 
@@ -34,7 +36,7 @@ colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0, 0.242188, 0, 0, 0.287324, 0.67
 
 [sub_resource type="Curve2D" id="6"]
 _data = {
-"points": PackedVector2Array(1.90004, 121.771, -1.90004, -121.771, 209, 657, 0, 0, 0, 0, 208, 471, 0, 0, 0, 0, 207, 657)
+"points": PackedVector2Array(1.90004, 121.771, -1.90004, -121.771, 151, -118, 0, 0, 0, 0, 1, -107, 0, 0, 0, 0, 1, 2)
 }
 point_count = 3
 
@@ -48,10 +50,10 @@ point_count = 4
 script = ExtResource("10")
 
 [node name="WellDone" type="Node2D" parent="."]
-position = Vector2(55, 246)
+position = Vector2(25, 42)
 script = ExtResource("1")
 shift = 0.214
-loop = false
+playing = true
 initial_state = [{
 "modulate.a": 1.0,
 "position": Vector2(39.5, 2),
@@ -104,63 +106,73 @@ font = ExtResource("11")
 
 [node name="Characters" type="Node2D" parent="WellDone"]
 
-[node name="Letter" parent="WellDone/Characters" instance=ExtResource("6")]
-position = Vector2(9, 0)
-script = ExtResource("6_7dj32")
+[node name="Letter" type="Node2D" parent="WellDone/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(313.38, -24.0917)
+scale = Vector2(2.53434, 2.53434)
+script = ExtResource("6_f3d1l")
 letter = "W"
 font = ExtResource("11")
 
-[node name="@Node2D@72923" parent="WellDone/Characters" instance=ExtResource("6")]
-position = Vector2(23, 0)
-script = ExtResource("6_7dj32")
+[node name="@Node2D@69648" type="Node2D" parent="WellDone/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(438.116, -17.7233)
+scale = Vector2(2.96229, 2.96229)
+script = ExtResource("6_f3d1l")
 letter = "E"
 font = ExtResource("11")
 
-[node name="@Node2D@72924" parent="WellDone/Characters" instance=ExtResource("6")]
-position = Vector2(32.5, 0)
-script = ExtResource("6_7dj32")
+[node name="@Node2D@69649" type="Node2D" parent="WellDone/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(562.066, 10.5527)
+scale = Vector2(0.208594, 0.208594)
+script = ExtResource("6_f3d1l")
 letter = "L"
 font = ExtResource("11")
 
-[node name="@Node2D@72925" parent="WellDone/Characters" instance=ExtResource("6")]
-position = Vector2(41.5, 0)
-script = ExtResource("6_7dj32")
+[node name="@Node2D@69650" type="Node2D" parent="WellDone/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(593.5, 21)
+scale = Vector2(1e-05, 1e-05)
+script = ExtResource("6_f3d1l")
 letter = "L"
 font = ExtResource("11")
 
-[node name="@Node2D@72926" parent="WellDone/Characters" instance=ExtResource("6")]
-position = Vector2(48, 0)
-script = ExtResource("6_7dj32")
+[node name="@Node2D@69651" type="Node2D" parent="WellDone/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(598.5, 21)
+scale = Vector2(1e-05, 1e-05)
+script = ExtResource("6_f3d1l")
 letter = " "
 font = ExtResource("11")
 
-[node name="@Node2D@72927" parent="WellDone/Characters" instance=ExtResource("6")]
-position = Vector2(56, 0)
-script = ExtResource("6_7dj32")
+[node name="@Node2D@69652" type="Node2D" parent="WellDone/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(604.5, 21)
+scale = Vector2(1e-05, 1e-05)
+script = ExtResource("6_f3d1l")
 letter = "D"
 font = ExtResource("11")
 
-[node name="@Node2D@72928" parent="WellDone/Characters" instance=ExtResource("6")]
-position = Vector2(68.5, 0)
-script = ExtResource("6_7dj32")
+[node name="@Node2D@69653" type="Node2D" parent="WellDone/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(614, 21)
+scale = Vector2(1e-05, 1e-05)
+script = ExtResource("6_f3d1l")
 letter = "O"
 font = ExtResource("11")
 
-[node name="@Node2D@72929" parent="WellDone/Characters" instance=ExtResource("6")]
-position = Vector2(82, 0)
-script = ExtResource("6_7dj32")
+[node name="@Node2D@69654" type="Node2D" parent="WellDone/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(624.5, 21)
+scale = Vector2(1e-05, 1e-05)
+script = ExtResource("6_f3d1l")
 letter = "N"
 font = ExtResource("11")
 
-[node name="@Node2D@72930" parent="WellDone/Characters" instance=ExtResource("6")]
-position = Vector2(94, 0)
-script = ExtResource("6_7dj32")
+[node name="@Node2D@69655" type="Node2D" parent="WellDone/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(634, 21)
+scale = Vector2(1e-05, 1e-05)
+script = ExtResource("6_f3d1l")
 letter = "E"
 font = ExtResource("11")
 
-[node name="@Node2D@72931" parent="WellDone/Characters" instance=ExtResource("6")]
-position = Vector2(102, 0)
-script = ExtResource("6_7dj32")
+[node name="@Node2D@69656" type="Node2D" parent="WellDone/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(640, 21)
+scale = Vector2(1e-05, 1e-05)
+script = ExtResource("6_f3d1l")
 letter = "!"
 font = ExtResource("11")
 
@@ -171,7 +183,7 @@ script = ExtResource("3")
 path_node = NodePath("Path2D")
 
 [node name="Path2D" type="Path2D" parent="WellDone/Effects/PathFollow"]
-position = Vector2(-209, -656)
+position = Vector2(1, -12)
 curve = SubResource("5")
 
 [node name="Scale" type="Node" parent="WellDone/Effects"]
@@ -183,10 +195,10 @@ script = ExtResource("5")
 enabled = false
 
 [node name="GreatGame" type="Node2D" parent="."]
-position = Vector2(55, 679)
+position = Vector2(24, 130)
 script = ExtResource("1")
 shift = 0.218
-loop = false
+playing = true
 initial_state = [{
 "modulate.a": 1.0,
 "position": Vector2(30, 0),
@@ -239,63 +251,80 @@ font = ExtResource("11")
 
 [node name="Characters" type="Node2D" parent="GreatGame"]
 
-[node name="Letter3" parent="GreatGame/Characters" instance=ExtResource("6")]
+[node name="Letter" type="Node2D" parent="GreatGame/Characters" instance=ExtResource("5_cra5j")]
 modulate = Color(0.0983887, 0.96875, 0, 1)
-position = Vector2(30, 0)
+position = Vector2(5, 0)
+script = ExtResource("6_f3d1l")
 letter = "G"
 font = ExtResource("11")
 
-[node name="Letter4" parent="GreatGame/Characters" instance=ExtResource("6")]
+[node name="@Node2D@70163" type="Node2D" parent="GreatGame/Characters" instance=ExtResource("5_cra5j")]
 modulate = Color(0.0983887, 0.96875, 0, 1)
-position = Vector2(89, 0)
+position = Vector2(15, 0)
+script = ExtResource("6_f3d1l")
 letter = "R"
 font = ExtResource("11")
 
-[node name="Letter5" parent="GreatGame/Characters" instance=ExtResource("6")]
+[node name="@Node2D@70164" type="Node2D" parent="GreatGame/Characters" instance=ExtResource("5_cra5j")]
 modulate = Color(0.0983887, 0.96875, 0, 1)
-position = Vector2(141, 0)
+position = Vector2(24, 0)
+script = ExtResource("6_f3d1l")
 letter = "E"
 font = ExtResource("11")
 
-[node name="Letter8" parent="GreatGame/Characters" instance=ExtResource("6")]
-modulate = Color(0.0983887, 0.96875, 0, 1)
-position = Vector2(194, 0)
+[node name="@Node2D@70165" type="Node2D" parent="GreatGame/Characters" instance=ExtResource("5_cra5j")]
+modulate = Color(0.101827, 0.966114, 0, 0.997862)
+position = Vector2(33, 0)
+scale = Vector2(1.00009, 1.00009)
+script = ExtResource("6_f3d1l")
 letter = "A"
 font = ExtResource("11")
 
-[node name="Letter9" parent="GreatGame/Characters" instance=ExtResource("6")]
-modulate = Color(0.0983887, 0.96875, 0, 1)
-position = Vector2(250, 0)
+[node name="@Node2D@70166" type="Node2D" parent="GreatGame/Characters" instance=ExtResource("5_cra5j")]
+modulate = Color(0.178333, 0.91716, 0, 0.957341)
+position = Vector2(42.5, 0)
+scale = Vector2(1.02076, 1.02076)
+script = ExtResource("6_f3d1l")
 letter = "T"
 font = ExtResource("11")
 
-[node name="Letter12" parent="GreatGame/Characters" instance=ExtResource("6")]
-modulate = Color(0.0983887, 0.96875, 0, 1)
-position = Vector2(285.5, 0)
+[node name="@Node2D@70167" type="Node2D" parent="GreatGame/Characters" instance=ExtResource("5_cra5j")]
+modulate = Color(0.435704, 0.761201, 0, 0.827359)
+position = Vector2(48.5, 0)
+scale = Vector2(1.17638, 1.17638)
+script = ExtResource("6_f3d1l")
 letter = " "
 font = ExtResource("11")
 
-[node name="Letter13" parent="GreatGame/Characters" instance=ExtResource("6")]
-modulate = Color(0.0983887, 0.96875, 0, 1)
-position = Vector2(325, 0)
+[node name="@Node2D@70168" type="Node2D" parent="GreatGame/Characters" instance=ExtResource("5_cra5j")]
+modulate = Color(0.670952, 0.489289, -0.00155056, 0.61613)
+position = Vector2(55, 0)
+scale = Vector2(1.63508, 1.63508)
+script = ExtResource("6_f3d1l")
 letter = "G"
 font = ExtResource("11")
 
-[node name="Letter16" parent="GreatGame/Characters" instance=ExtResource("6")]
-modulate = Color(0.0983887, 0.96875, 0, 1)
-position = Vector2(385, 0)
+[node name="@Node2D@70169" type="Node2D" parent="GreatGame/Characters" instance=ExtResource("5_cra5j")]
+modulate = Color(0.29687, 0.0306909, -0.0715687, 0.375037)
+position = Vector2(65, 0)
+scale = Vector2(2.4819, 2.4819)
+script = ExtResource("6_f3d1l")
 letter = "A"
 font = ExtResource("11")
 
-[node name="Letter17" parent="GreatGame/Characters" instance=ExtResource("6")]
-modulate = Color(0.0983887, 0.96875, 0, 1)
-position = Vector2(453, 0)
+[node name="@Node2D@70170" type="Node2D" parent="GreatGame/Characters" instance=ExtResource("5_cra5j")]
+modulate = Color(0.781409, 0.713121, 0.730371, 0.0658765)
+position = Vector2(76.5, 0)
+scale = Vector2(3.59572, 3.59572)
+script = ExtResource("6_f3d1l")
 letter = "M"
 font = ExtResource("11")
 
-[node name="Letter20" parent="GreatGame/Characters" instance=ExtResource("6")]
-modulate = Color(0.0983887, 0.96875, 0, 1)
-position = Vector2(514, 0)
+[node name="@Node2D@70171" type="Node2D" parent="GreatGame/Characters" instance=ExtResource("5_cra5j")]
+modulate = Color(1.05062, 1.0668, 1.0668, -0.0191921)
+position = Vector2(87, 0)
+scale = Vector2(4.61108, 4.61108)
+script = ExtResource("6_f3d1l")
 letter = "E"
 font = ExtResource("11")
 
@@ -310,10 +339,10 @@ script = ExtResource("5")
 gradient = SubResource("9")
 
 [node name="Almost" type="Node2D" parent="."]
-position = Vector2(60, 1138)
+position = Vector2(20, 200)
 script = ExtResource("1")
 shift = 0.51
-loop = false
+playing = true
 initial_state = [{
 "modulate.a": 1.0,
 "position": Vector2(30, 0),
@@ -394,88 +423,109 @@ font = ExtResource("11")
 
 [node name="Characters" type="Node2D" parent="Almost"]
 
-[node name="Letter" parent="Almost/Characters" instance=ExtResource("6")]
-position = Vector2(30, 0)
+[node name="Letter" type="Node2D" parent="Almost/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(6, 2)
+script = ExtResource("6_f3d1l")
 letter = "A"
 font = ExtResource("11")
 
-[node name="Letter2" parent="Almost/Characters" instance=ExtResource("6")]
-position = Vector2(81.5, 0)
+[node name="@Node2D@73075" type="Node2D" parent="Almost/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(14.5, 2)
+script = ExtResource("6_f3d1l")
 letter = "l"
 font = ExtResource("11")
 
-[node name="Letter6" parent="Almost/Characters" instance=ExtResource("6")]
-position = Vector2(146, 0)
+[node name="@Node2D@73076" type="Node2D" parent="Almost/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(25, 2)
+script = ExtResource("6_f3d1l")
 letter = "m"
 font = ExtResource("11")
 
-[node name="Letter7" parent="Almost/Characters" instance=ExtResource("6")]
-position = Vector2(219.5, 0)
+[node name="@Node2D@73077" type="Node2D" parent="Almost/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(37, 2)
+script = ExtResource("6_f3d1l")
 letter = "o"
 font = ExtResource("11")
 
-[node name="Letter10" parent="Almost/Characters" instance=ExtResource("6")]
-position = Vector2(275.5, 0)
+[node name="@Node2D@73078" type="Node2D" parent="Almost/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(46.5, 2)
+script = ExtResource("6_f3d1l")
 letter = "s"
 font = ExtResource("11")
 
-[node name="Letter11" parent="Almost/Characters" instance=ExtResource("6")]
-position = Vector2(327, 0)
+[node name="@Node2D@73079" type="Node2D" parent="Almost/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(55.5, 2)
+script = ExtResource("6_f3d1l")
 letter = "t"
 font = ExtResource("11")
 
-[node name="Letter14" parent="Almost/Characters" instance=ExtResource("6")]
-position = Vector2(363.5, 0)
+[node name="@Node2D@73080" type="Node2D" parent="Almost/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(62, 2)
+script = ExtResource("6_f3d1l")
 letter = ","
 font = ExtResource("11")
 
-[node name="Letter15" parent="Almost/Characters" instance=ExtResource("6")]
-position = Vector2(383.5, 0)
+[node name="@Node2D@73081" type="Node2D" parent="Almost/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(65.5, 2)
+script = ExtResource("6_f3d1l")
 letter = " "
 font = ExtResource("11")
 
-[node name="Letter18" parent="Almost/Characters" instance=ExtResource("6")]
-position = Vector2(419, 0)
+[node name="@Node2D@73082" type="Node2D" parent="Almost/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(71.5, 2)
+script = ExtResource("6_f3d1l")
 letter = "T"
 font = ExtResource("11")
 
-[node name="Letter19" parent="Almost/Characters" instance=ExtResource("6")]
-position = Vector2(474, 0)
+[node name="@Node2D@73083" type="Node2D" parent="Almost/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(81, 2)
+script = ExtResource("6_f3d1l")
 letter = "r"
 font = ExtResource("11")
 
-[node name="Letter22" parent="Almost/Characters" instance=ExtResource("6")]
-position = Vector2(532, 0)
+[node name="@Node2D@73084" type="Node2D" parent="Almost/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(91, 2)
+script = ExtResource("6_f3d1l")
 letter = "y"
 font = ExtResource("11")
 
-[node name="Letter23" parent="Almost/Characters" instance=ExtResource("6")]
-position = Vector2(570.5, 0)
+[node name="@Node2D@73085" type="Node2D" parent="Almost/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(97.5, 2)
+script = ExtResource("6_f3d1l")
 letter = " "
 font = ExtResource("11")
 
-[node name="Letter26" parent="Almost/Characters" instance=ExtResource("6")]
-position = Vector2(610, 0)
+[node name="@Node2D@73086" type="Node2D" parent="Almost/Characters" instance=ExtResource("5_cra5j")]
+position = Vector2(104, 2)
+script = ExtResource("6_f3d1l")
 letter = "A"
 font = ExtResource("11")
 
-[node name="Letter27" parent="Almost/Characters" instance=ExtResource("6")]
-position = Vector2(670, 0)
+[node name="@Node2D@73087" type="Node2D" parent="Almost/Characters" instance=ExtResource("5_cra5j")]
+modulate = Color(1, 1, 1, 0.995626)
+position = Vector2(114, 0.635193)
+script = ExtResource("6_f3d1l")
 letter = "g"
 font = ExtResource("11")
 
-[node name="Letter30" parent="Almost/Characters" instance=ExtResource("6")]
-position = Vector2(730, 0)
+[node name="@Node2D@73088" type="Node2D" parent="Almost/Characters" instance=ExtResource("5_cra5j")]
+modulate = Color(1, 1, 1, 0.66044)
+position = Vector2(124, -103.958)
+script = ExtResource("6_f3d1l")
 letter = "a"
 font = ExtResource("11")
 
-[node name="Letter31" parent="Almost/Characters" instance=ExtResource("6")]
-position = Vector2(774, 0)
+[node name="@Node2D@73089" type="Node2D" parent="Almost/Characters" instance=ExtResource("5_cra5j")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(281.5, -118)
+script = ExtResource("6_f3d1l")
 letter = "i"
 font = ExtResource("11")
 
-[node name="Letter34" parent="Almost/Characters" instance=ExtResource("6")]
-position = Vector2(819.5, 0)
+[node name="@Node2D@73090" type="Node2D" parent="Almost/Characters" instance=ExtResource("5_cra5j")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(289, -118)
+script = ExtResource("6_f3d1l")
 letter = "n"
 font = ExtResource("11")
 
@@ -486,7 +536,7 @@ script = ExtResource("3")
 path_node = NodePath("Path2D")
 
 [node name="Path2D" type="Path2D" parent="Almost/Effects/PathFollow"]
-position = Vector2(-209, -656)
+position = Vector2(1, 1)
 curve = SubResource("6")
 
 [node name="Scale" type="Node" parent="Almost/Effects"]
@@ -498,7 +548,7 @@ scale_curve = SubResource("3")
 script = ExtResource("5")
 
 [node name="Congratulations" type="Node2D" parent="."]
-position = Vector2(84, 1543)
+position = Vector2(51, 289)
 script = ExtResource("1")
 shift = 0.1
 loop = false
@@ -578,88 +628,89 @@ character_container = NodePath("Characters")
 modulate = Color(0, 0.439216, 1, 1)
 
 [node name="C" parent="Congratulations/Characters" instance=ExtResource("6")]
-position = Vector2(-14, 7)
+position = Vector2(-12, 6)
 letter = "C"
 font = ExtResource("11")
 
 [node name="O" parent="Congratulations/Characters" instance=ExtResource("6")]
-position = Vector2(38, 7)
+position = Vector2(40, 6)
 letter = "O"
 font = ExtResource("11")
 
 [node name="N" parent="Congratulations/Characters" instance=ExtResource("6")]
-position = Vector2(101, 7)
+position = Vector2(103, 6)
 letter = "N"
 font = ExtResource("11")
 
 [node name="G" parent="Congratulations/Characters" instance=ExtResource("6")]
-position = Vector2(168, 7)
+position = Vector2(170, 6)
 letter = "G"
 font = ExtResource("11")
 
 [node name="R" parent="Congratulations/Characters" instance=ExtResource("6")]
-position = Vector2(234, 7)
+position = Vector2(236, 6)
 letter = "R"
 font = ExtResource("11")
 
 [node name="A" parent="Congratulations/Characters" instance=ExtResource("6")]
-position = Vector2(296, 7)
+position = Vector2(298, 6)
 letter = "A"
 font = ExtResource("11")
 
 [node name="T" parent="Congratulations/Characters" instance=ExtResource("6")]
-position = Vector2(353, 7)
+position = Vector2(355, 6)
 letter = "T"
 font = ExtResource("11")
 
 [node name="U" parent="Congratulations/Characters" instance=ExtResource("6")]
-position = Vector2(410, 7)
+position = Vector2(412, 6)
 letter = "U"
 font = ExtResource("11")
 
 [node name="L" parent="Congratulations/Characters" instance=ExtResource("6")]
-position = Vector2(467, 7)
+position = Vector2(469, 6)
 letter = "L"
 font = ExtResource("11")
 
 [node name="A2" parent="Congratulations/Characters" instance=ExtResource("6")]
-position = Vector2(518, 7)
+position = Vector2(520, 6)
 letter = "A"
 font = ExtResource("11")
 
 [node name="T2" parent="Congratulations/Characters" instance=ExtResource("6")]
-position = Vector2(574, 7)
+position = Vector2(576, 6)
 letter = "T"
 font = ExtResource("11")
 
 [node name="I" parent="Congratulations/Characters" instance=ExtResource("6")]
-position = Vector2(619, 7)
+position = Vector2(621, 6)
 letter = "I"
 font = ExtResource("11")
 
 [node name="O2" parent="Congratulations/Characters" instance=ExtResource("6")]
-position = Vector2(662, 7)
+position = Vector2(664, 6)
 letter = "O"
 font = ExtResource("11")
 
 [node name="N2" parent="Congratulations/Characters" instance=ExtResource("6")]
-position = Vector2(725, 7)
+position = Vector2(727, 6)
 letter = "N"
 font = ExtResource("11")
 
 [node name="S" parent="Congratulations/Characters" instance=ExtResource("6")]
-position = Vector2(789, 7)
+position = Vector2(791, 6)
 letter = "S"
 font = ExtResource("11")
 
 [node name="!" parent="Congratulations/Characters" instance=ExtResource("6")]
-position = Vector2(870, -16)
+position = Vector2(872, -17)
 letter = "!"
 font = ExtResource("11")
 
 [node name="Sprite" type="Sprite2D" parent="Congratulations/Characters"]
-position = Vector2(877, -113)
+position = Vector2(955, -3)
 texture = ExtResource("7")
+script = ExtResource("12_f3d1l")
 
 [node name="Effects" type="Node2D" parent="Congratulations"]
 

@@ -48,5 +48,6 @@ func _regen_characters() -> void:
 				letter.owner = get_tree().edited_scene_root
 			letter.letter = l
 			letter.position = Vector2(x + letter.size.x / 2.0, 0.0)
+			letter.start_global_position = letter.global_position
 			letter.font = font
 			x += letter.size.x
