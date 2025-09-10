@@ -1,4 +1,7 @@
 ## Godot Animated Text
+
+[[animated_text.gif]]
+
 ### For Godot Version 3.x
 
 Animated Text is a modular plugin for creating animated text
